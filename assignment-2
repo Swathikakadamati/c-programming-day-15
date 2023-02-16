@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int i;
+    float random_num;
+
+    // Use the current time as a seed for the random number generator
+    srand(time(NULL));
+
+    printf("10 random numbers between 1 and 2 (excluding 2):\n");
+
+    for (i = 0; i < 10; ++i) {
+        // Generate a random floating point number between 1 and 2 (excluding 2)
+        random_num = (float)rand()/(float)(RAND_MAX/1.0) + 1.0;
+        printf("%f\n", random_num);
+    }
+
+    return 0;
+}
